@@ -8,10 +8,15 @@ import { Observable } from 'rxjs';
 export class FetchvideoService {
   constructor(private _http: HttpClient) {}
 
-  public videoUrl =
-    'https://api.pexels.com/videos/search?query=nature&per_page=1';
-
-  getVideo(): Observable<Video> {
-    return this._http.get<Video>(this.videoUrl);
+  getVideo() {
+    return this._http.get<FreeVideo>(
+      'https://api.pexels.com/videos/search?query=caribbean&per_page=1',
+      {
+        headers: {
+          Authorization:
+            '563492ad6f9170000100000175fc3791ef6f4a68905ee387fd4448bc',
+        },
+      }
+    );
   }
 }

@@ -1,8 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="col" *ngFor="let v of video">
-      <h1>{{ v.id }}</h1>
-      <a [href]="v.link" class="width-100"></a>
+    <div class="column-lg-4">
+      <div *ngFor="let video of videos">
+        <video width="300" height="400" controls>
+          <source
+            *ngFor="let videofile of video.video_files"
+            [src]="videofile.link"
+            type="{{ videofile.file_type }}"
+          />
+        </video>
+      </div>
     </div>
   </div>
 </div>

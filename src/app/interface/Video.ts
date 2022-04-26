@@ -15,17 +15,20 @@ export interface VideoFile {
 
 export interface VideoPicture {
   id: number;
-  picture: string;
   nr: number;
+  picture: string;
 }
 
 export interface Video {
   id: number;
   width: number;
   height: number;
+  duration: number;
+  full_res?: any;
+  tags: any[];
   url: string;
   image: string;
-  duration: number;
+  avg_color?: any;
   user: User;
   video_files: VideoFile[];
   video_pictures: VideoPicture[];
@@ -34,7 +37,8 @@ export interface Video {
 export interface FreeVideo {
   page: number;
   per_page: number;
-  total_results: number;
-  url: string;
   videos: Video[];
+  total_results: number;
+  next_page: string;
+  url: string;
 }

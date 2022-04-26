@@ -8,12 +8,12 @@ import { Video, VideoFile } from '../interface/Video';
   styleUrls: ['./display-video.component.css'],
 })
 export class DisplayVideoComponent implements OnInit {
-  public video: VideoFile[] = [];
   constructor(private fetchvideo: FetchvideoService) {}
+  public videos: Video[] = [];
 
   ngOnInit(): void {
     this.fetchvideo
       .getVideo()
-      .subscribe((video) => (this.video = video.video_files));
+      .subscribe((response) => (this.videos = response.videos));
   }
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchphotoService } from '../fetchphoto.service';
-import { Urls } from '../interface/Photos';
 
 @Component({
   selector: 'app-displayphoto',
